@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  app:
+    image: my-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # The values of the environment variables are taken from the .env file
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}

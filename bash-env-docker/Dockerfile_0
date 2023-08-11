@@ -1,0 +1,16 @@
+FROM alpine:latest
+
+ENV DB_HOST ${DB_HOST:-}
+ENV DB_PORT ${DB_PORT:-}
+
+RUN apk add --update --no-cache bash
+
+# Import the environment variables from the .env file
+RUN if [ -f .env ]; then \
+    echo "Importing environment variables from .env file"; \
+    export $(cat .env | xargs); \
+fi
+COPY . .
+RUN echo "DB_HOST=$DB_HOST"
+RUN echo "DB_PORT=$DB_PORT"
+CMD ["/bin/sh", "testShell.sh"]

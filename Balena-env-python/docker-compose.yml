@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  vv-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: balenalib/raspberrypi4-64-debian:latest
+#    environment:
+#      # Get the value of a FLEET variable from the dashboard
+#      FOO: ${foo}
+#      # Get the value of a DEVICE variable from the dashboard
+#      BAR: ${bar}
+
+    command: python3 getvarsBalenaToken.py
