@@ -9,3 +9,6 @@ Next step:  A simple bash script running in the Rpi that can access the .env par
 
 Eventually:  (1) Install pisound drivers and then (2) build orcanode
 
+The orcanode-balena directory has a working Dockerfile docker-compose.yml set of files.
+
+    You do need a .env file with the AWS keys and NODE_NAME etc.
